@@ -6,4 +6,13 @@
 И функция peek, возвращающая текущий элемент с вершины
 У нас нет функции создания стопки(стека), поэтому необходимо вручную обнулять значение размера
 Вспомогательные функции для печати тарелок
-//сделала это объяснение на основании обычного
+//сделала это объяснение на основании обычного и единственное, что я смогла сделать на основании обычного стека
+public int popAt(int index) {
+ return leftShift (index, true);
+ }
+
+ public int leftShift(int index, boolean removeTop) {
+ Stack stack = stacks.get(index);
+ int removed_item;
+ if (removeTop) removed_item = stack.pop();
+ else removed_item = stack.removeBottom( );
