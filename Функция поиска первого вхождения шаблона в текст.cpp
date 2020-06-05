@@ -1,23 +1,23 @@
 int strstr(const char *text, const char *pattern)
 {
-   int cnt = 0;
+   int x = 0;
     bool a = false;
     if(*pattern)
         do {
-            while(text[cnt] && text[cnt] != *pattern) ++cnt;
-            if(text[cnt]) {
+            while(text[x] && text[x] != *pattern) ++x;
+            if(text[x]) {
                 int i = 1;
                 a = true;
                 while(a && pattern[i]) {
-                    if(text[cnt + i] && text[cnt + i] == pattern[i])
+                    if(text[x + i] && text[x + i] == pattern[i])
                         ++i;
                     else
                         a = false;
                 }
             }
-        } while(!a && text[++cnt]);
+        } while(!a && text[++x]);
     else
         a = true;
  
-    return a ? cnt : -1;
+    return a ? x : -1;
 }
